@@ -84,8 +84,14 @@
 
           .btn {
             color: #fff;
-            border: 0 none;
+            border: 1px solid rgba(246, 137, 21, 0.69);
             background-color: rgba(246, 137, 21, 0.69);
+
+            &:active {
+              color: rgba(246, 137, 21, 0.69);
+              border: 1px solid rgba(246, 137, 21, 0.69);
+              background-color: #f6f7f7;
+            }
           }
         }
       }
@@ -102,15 +108,27 @@
 
             &:first-child {
               color: #fff;
-              border: 0 none;
+              border: 1px solid rgba(21, 165, 246, 0.69);
               background-color: rgba(21, 165, 246, 0.69);
+
+              &:active {
+                color: rgba(21, 165, 246, 0.69);
+                border: 1px solid rgba(21, 165, 246, 0.69);
+                background-color: #f6f7f7;
+              }
             }
 
             &:last-child {
               margin-left: 20px;
               color: #fff;
-              border: 0 none;
+              border: 1px solid rgba(246, 128, 213, 0.69);
               background-color: rgba(246, 128, 213, 0.69);
+
+              &:active {
+                color: rgba(246, 128, 213, 0.69);
+                border: 1px solid rgba(246, 128, 213, 0.69);
+                background-color: #f6f7f7;
+              }
             }
           }
         }
@@ -128,6 +146,11 @@
           border-radius: 20px;
           background-color: #f6f7f7;
           cursor: pointer;
+
+          &:active {
+            color: #fff;
+            background-color: #7454f6;
+          }
         }
       }
     }
