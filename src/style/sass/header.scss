@@ -1,0 +1,87 @@
+@use './common' as *;
+
+.header {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  width: 100%;
+  height: 50px;
+
+  .blind {
+    @include blind;
+  }
+
+  .countArea {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    background-color: #fff;
+
+    dl {
+      flex: 1;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 10px;
+
+      dt {
+        font-size: 14px;
+      }
+
+      dd {
+        font-weight: 600;
+        font-size: 24px;
+      }
+    }
+  }
+
+  .rightArea {
+    display: grid;
+    grid-template-columns: 3fr 1.3fr;
+    height: 100%;
+
+    .titleArea {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 80%;
+      margin-left: 30px;
+      padding: 0 20px;
+      background-color: #fff;
+
+      .title {
+        display: block;
+        font-size: 28px;
+      }
+
+      .btn {
+        padding: 4px 6px;
+        background-color: #d9d9d9;
+      }
+    }
+
+    .urlArea {
+      display: flex;
+      align-items: center;
+      height: 100%;
+
+      .btn {
+        display: flex;
+        width: 24px;
+        height: 24px;
+        background: url('../images/icon/logout.png') center / 100% 100%
+          no-repeat;
+      }
+
+      .url {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        margin-left: 10px;
+        padding: 0 20px;
+        background-color: #fff;
+      }
+    }
+  }
+}

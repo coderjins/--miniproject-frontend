@@ -4,6 +4,7 @@ import Main from './pages/Main/Main';
 import Signup from './pages/Signup/Signup';
 import FindID from './pages/Find/FindID';
 import FindPW from './pages/Find/FindPW';
+import Home from './pages/Home/Home';
 
 const Router = () => {
   return (
@@ -14,6 +15,7 @@ const Router = () => {
           <Route path="/signup" element={<Signup />} />
           <Route path="/findid" element={<FindID />} />
           <Route path="/findpw" element={<FindPW />} />
+          <Route path="/home" element={<Home />} />
         </Routes>
       </Layout>
     </BrowserRouter>

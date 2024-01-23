@@ -3,7 +3,11 @@
 @use 'reset';
 @use 'common';
 
+// components
+@use 'header';
+
 // page
 @use 'main';
 @use 'signup';
 @use 'find';
+@use 'home';
