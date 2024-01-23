@@ -1,0 +1,112 @@
+.Login {
+  margin: auto;
+  display: flex;
+  width: var(--Container, 576px);
+  height: 910px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  background: #fff;
+
+  .imageWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    flex: 1 0 0;
+    align-self: stretch;
+    .Logo {
+      width: 300px;
+      height: 300px;
+    }
+  }
+
+  .container {
+    display: flex;
+    padding: 0px 24px;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    align-self: stretch;
+    width: 528px;
+    height: 225px;
+
+    .input {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      width: Fill;
+      height: 225px;
+      gap: 8px;
+      align-self: stretch;
+
+      .email,
+      .password {
+        display: flex;
+        height: var(--input_Height, 56px);
+        align-items: center;
+        align-self: stretch;
+        border-radius: 6px;
+        border: 1px solid var(--Grey88, #e0e0e0);
+        background: var(--White, #fff);
+        padding-left: 15px;
+        &::placeholder {
+          color: #999;
+        }
+        .email::placeholder {
+          display: flex;
+          height: var(--input_Height, 56px);
+          padding: 19px 470px 15px 16px;
+          align-items: center;
+          align-self: stretch;
+        }
+        .password::placeholder {
+          display: flex;
+          height: var(--input_Height, 56px);
+          padding: 19px 456px 15px 16px;
+          align-items: center;
+          align-self: stretch;
+        }
+      }
+    }
+    .login_option {
+      display: flex;
+      width: 240px;
+      justify-content: center;
+      align-items: center;
+      gap: 24px;
+      .signUp {
+        width: 96px;
+        flex-shrink: 0;
+        color: var(--Black, #000);
+        text-align: center;
+        font-family: Apple SD Gothic Neo;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      }
+      .line {
+        width: var(--C_Radius, 1px);
+        height: 16px;
+        background: #e0e0e0;
+      }
+      .findUserInfo {
+        width: 96px;
+        flex-shrink: 0;
+        color: var(--Black, #000);
+        text-align: center;
+        font-feature-settings:
+          'clig' off,
+          'liga' off;
+        font-family: Apple SD Gothic Neo;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      }
+    }
+  }
+}
