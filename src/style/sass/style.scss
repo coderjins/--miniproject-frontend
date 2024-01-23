@@ -1,7 +1,8 @@
 @charset 'UTF-8';
 
-@use "reset";
-@use "common";
+@use 'reset';
+@use 'common';
 
 // page
-@use "main";
+@use 'main';
+@use 'signup';
