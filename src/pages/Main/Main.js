@@ -8,7 +8,6 @@ const Main = () => {
         <div className="loginArea">
           <div className="loginGroup">
             <h2 className="loginTitle">LOGIN</h2>
-            {/* 로그인 인풋 폼 */}
             <form>
               <div className="formInput">
                 <label htmlFor="email" className="formLabel blind">
@@ -33,7 +32,6 @@ const Main = () => {
                 />
               </div>
             </form>
-            {/* // 로그인 인풋 폼 */}
             <div className="btnArea">
               <button type="button" className="btn">
                 로그인
