@@ -11,21 +11,23 @@ const Main = () => {
             {/* 로그인 인풋 폼 */}
             <form>
               <div className="formInput">
-                <label htmlFor="" className="formLabel blind">
+                <label htmlFor="email" className="formLabel blind">
                   이메일
                 </label>
                 <input
                   type="email"
+                  id="email"
                   className="formControl"
                   placeholder="이메일"
                 />
               </div>
               <div className="formInput">
-                <label htmlFor="" className="formLabel blind">
+                <label htmlFor="password" className="formLabel blind">
                   비밀번호
                 </label>
                 <input
                   type="password"
+                  id="password"
                   className="formControl"
                   placeholder="비밀번호"
                 />
