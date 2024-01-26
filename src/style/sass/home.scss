@@ -1,4 +1,143 @@
 @use './common' as *;
 
 .home {
+  .layoutArea {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    column-gap: 30px;
+    height: calc(100% - 60px);
+    padding: 30px;
+
+    .blind {
+      @include blind;
+    }
+
+    .rightArea {
+      .topArea {
+        display: grid;
+        grid-template-columns: 3fr 1.5fr;
+      }
+    }
+
+    .topArea {
+      display: flex;
+      height: 50px;
+
+      dl {
+        flex: 1;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 10px;
+        background-color: #fff;
+
+        dt {
+          font-size: 14px;
+        }
+
+        dd {
+          font-weight: 600;
+          font-size: 24px;
+        }
+      }
+
+      .titleArea {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 80%;
+        padding: 0 20px;
+        background-color: #fff;
+
+        .title {
+          display: block;
+          font-size: 28px;
+        }
+
+        .btn {
+          padding: 4px 6px;
+          background-color: #d9d9d9;
+        }
+      }
+
+      .urlArea {
+        display: flex;
+        align-items: center;
+        height: 100%;
+
+        .btn {
+          display: flex;
+          width: 24px;
+          height: 24px;
+          background: url('../images/icon/logout.png') center / 100% 100%
+            no-repeat;
+        }
+
+        .url {
+          display: flex;
+          align-items: center;
+          width: 100%;
+          height: 100%;
+          margin-left: 10px;
+          padding: 0 20px;
+          background-color: #fff;
+        }
+      }
+    }
+
+    .bottomArea {
+      position: relative;
+      height: calc(100% - 80px);
+      margin: 30px 0;
+      border: 2px solid #9b9b9b;
+      border-radius: 25px;
+      background-color: #fff;
+
+      &.left {
+        &::before {
+          content: '';
+          position: absolute;
+          top: 10%;
+          right: -46px;
+          width: 57px;
+          height: 15px;
+          background: url('../images/icon/spring.png') center / 100% 100%
+            no-repeat;
+        }
+        &::after {
+          content: '';
+          position: absolute;
+          top: 13%;
+          right: -46px;
+          width: 57px;
+          height: 15px;
+          background: url('../images/icon/spring.png') center / 100% 100%
+            no-repeat;
+        }
+      }
+
+      &.right {
+        &::before {
+          content: '';
+          position: absolute;
+          bottom: 10%;
+          left: -45px;
+          width: 56px;
+          height: 15px;
+          background: url('../images/icon/spring.png') center / 100% 100%
+            no-repeat;
+        }
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: 13%;
+          left: -45px;
+          width: 56px;
+          height: 15px;
+          background: url('../images/icon/spring.png') center / 100% 100%
+            no-repeat;
+        }
+      }
+    }
+  }
 }
