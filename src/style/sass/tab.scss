@@ -1,0 +1,29 @@
+.tab {
+  z-index: 10;
+  position: fixed;
+  top: 20%;
+  right: 0;
+
+  .tabArea {
+    li {
+      ~ li {
+        padding-top: 10px;
+      }
+
+      .btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 78px;
+        height: 50px;
+        font-size: 18px;
+        border-radius: 0px 10px 10px 0px;
+        background-color: #0090b8;
+
+        &.active {
+          background-color: #fff;
+        }
+      }
+    }
+  }
+}

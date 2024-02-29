@@ -1,7 +1,14 @@
 @charset 'UTF-8';
 
-@use "reset";
-@use "common";
+@use 'reset';
+@use 'common';
+
+// components
+@use 'tab';
 
 // page
-@use "main";
+@use 'main';
+@use 'signup';
+@use 'signup_back';
+@use 'find';
+@use 'home';
