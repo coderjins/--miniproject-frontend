@@ -1,0 +1,28 @@
+.button {
+  display: flex;
+  height: var(--input_Height, 56px);
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+  color: var(--White, #fff);
+  font-family: Apple SD Gothic Neo;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  cursor: pointer;
+  background: rgba(246, 137, 21, 0.69);
+
+  &:disabled {
+    background: gray;
+  }
+}
+
+.mini {
+  height: 56px;
+  width: 120px;
+  padding: 0px 34px;
+  display: flex;
+  align-items: center;
+}

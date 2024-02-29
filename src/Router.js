@@ -1,6 +1,10 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
 import Main from './pages/Main/Main';
+import SignIn from './pages/SignIn/SignIn';
+import SignUp from './pages/SignIn/SignUp';
+import FindId from './pages/SignIn/FindId';
+import FindPwd from './pages/SignIn/FindPwd';
 import Signup from './pages/Signup/Signup';
 import FindID from './pages/Find/FindID';
 import FindPW from './pages/Find/FindPW';
@@ -11,6 +15,10 @@ const Router = () => {
     <BrowserRouter>
       <Layout>
         <Routes>
+          <Route path="/users/signin" element={<SignIn />} />
+          <Route path="/users/signup" element={<SignUp />} />
+          <Route path="/users/findid" element={<FindId />} />
+          <Route path="/users/findpwd" element={<FindPwd />} />
           <Route path="/" element={<Main />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/findid" element={<FindID />} />

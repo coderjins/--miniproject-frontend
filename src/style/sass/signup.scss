@@ -1,88 +1,290 @@
-@use './common' as *;
-
-.signup {
-  .signupArea {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.joinInfoRequire {
+  margin: auto;
+  height: 876px;
+  width: 576px;
+  gap: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--White, #fff);
+  .header {
+    width: 576px;
+    height: 56px;
+    padding: 8px 481px 8px 16px;
     align-items: center;
-    height: 100%;
-
-    .signupTitle {
+    flex-shrink: 0;
+    align-self: stretch;
+    .back {
       display: flex;
+      width: 79px;
+      height: 40px;
       justify-content: center;
       align-items: center;
-      font-weight: 600;
-      font-size: 40px;
+      gap: 4px;
+      .backArrow {
+        width: 20px;
+        height: 20px;
+        padding-bottom: 3px;
+      }
+    }
+  }
+  .container {
+    height: 652px;
+    display: flex;
+    padding: 0px 24px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    flex: 1 0 0;
+    align-self: stretch;
+
+    .titleText {
+      width: 84px;
+      height: 29px;
+      display: flex;
+      padding: 6px 0px;
+      justify-content: center;
+      align-items: center;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 800;
+      line-height: normal;
     }
 
-    form {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 100%;
-      padding-top: 40px;
-
-      .formInput {
-        + .formInput {
-          padding-top: 24px;
+    .basicInfoFrame {
+      width: 528px;
+      height: 8px;
+      gap: 8px;
+      .label {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        align-self: stretch;
+        .userinfoText {
+          font-size: 16px;
+          width: 60px;
+          height: 22px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 22px;
         }
-
-        .formLabel {
-          display: block;
-
-          &.blind {
-            @include blind;
-          }
+        .infoOptionalText {
+          text-align: right;
+          width: 45px;
+          height: 14px;
+          font-size: 12px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+          color: #ff3636;
         }
-
-        .formControl {
-          width: 400px;
-          height: 56px;
-          padding: 10px 20px;
-          font-size: 20px;
-          border: 0 none;
-          border-bottom: 2px solid rgba(0, 0, 0, 0.5);
-          background-color: #f6f7f7;
-          outline: none;
-          box-sizing: border-box;
-
-          &::placeholder {
-            font-weight: 600;
-            color: #9b9b9b;
-          }
-
-          &:focus {
-            border-bottom: 2px solid rgba(60, 14, 246, 0.7);
-          }
+      }
+      .userInputFrame {
+        height: 184px;
+        gap: 8px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        align-self: stretch;
+        .userInput {
+          display: flex;
+          padding: 19px 0px 15px 16px;
+          align-items: center;
+          align-self: stretch;
+          border-radius: 6px;
+          border: 1px solid #e0e0e0;
+          background: #fff;
         }
       }
     }
-
-    .btnArea {
+    .nicknameInfoFrame {
+      width: 528px;
+      height: 134px;
+      gap: 8px;
       display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-      padding-top: 40px;
-
-      .btn {
+      flex-direction: column;
+      align-items: flex-start;
+      align-self: stretch;
+      margin-top: 30px;
+      .nicknameLabel {
+        height: 22px;
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
-        width: 400px;
-        height: 50px;
-        padding: 0 10px;
-        font-size: 20px;
-        color: #7454f6;
-        border: 1px solid #7454f6;
-        border-radius: 20px;
-        background-color: #f6f7f7;
-        cursor: pointer;
+        align-self: stretch;
+        .nicknameInfoText {
+          width: 42px;
+          height: 22px;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 22px;
+        }
+        .infoOptionalText {
+          text-align: right;
+          width: 45px;
+          height: 14px;
+          font-size: 12px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+          color: #ff3636;
+        }
+      }
+      .nicknameInputFrame {
+        height: 184px;
+        gap: 8px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        align-self: stretch;
+        .nicknameInput {
+          display: flex;
+          padding: 19px 0px 15px 16px;
+          align-items: center;
+          align-self: stretch;
+          border-radius: 6px;
+          border: 1px solid #e0e0e0;
+          background: #fff;
+        }
+      }
+    }
+    .phoneNumberInfoFrame {
+      width: 528px;
+      height: 86px;
+      gap: 8px;
+      .phoneNumberLabel {
+        height: 22px;
+        justify-content: space-between;
+        display: flex;
+        align-items: center;
+        align-self: stretch;
+        .phoneNumberinfoText {
+          font-size: 16px;
+          width: 60px;
+          height: 22px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 22px;
+        }
+        .infoOptionalText {
+          text-align: right;
+          width: 45px;
+          height: 14px;
+          font-size: 12px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+          color: #ff3636;
+        }
+      }
+      .numberSelectBox {
+        height: 56px;
+        display: flex;
+        align-items: flex-start;
+        gap: 8px;
+        align-self: stretch;
+        .numberBox {
+          width: 136px;
+          border-radius: 6px;
+          border: 1px;
+          display: flex;
+          padding: 16px 14px 15px 16px;
+          justify-content: center;
+          align-items: flex-end;
+          gap: 56px;
+          border-radius: 6px;
+          border: 1px solid #e0e0e0;
+          background: #fff;
+        }
+        .numberInput {
+          width: 384px;
+          display: flex;
+          padding: 19px 0px 15px 16px;
+          align-items: center;
+          flex: 1 0 0;
+          border-radius: 6px;
+          border: 1px solid #e0e0e0;
+          background: #fff;
+        }
+      }
+    }
+    .birthdayFrame {
+      width: 528px;
+      height: 86px;
+      gap: 8px;
+      margin-top: 30px;
+      .birthdayLabel {
+        height: 22px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        align-self: stretch;
 
-        &:active {
-          color: #fff;
-          background-color: #7454f6;
+        .birthdayInfoText {
+          width: 42px;
+          height: 22px;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 22px;
+        }
+        .infoOptionalText1 {
+          width: 45px;
+          height: 14px;
+          font-size: 12px;
+          text-align: right;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+          color: #999;
+        }
+      }
+      .birthdaySelectFrame {
+        width: 528px;
+        height: 56px;
+        display: flex;
+        align-items: flex-start;
+        align-self: stretch;
+
+        .yearBox {
+          width: 136px;
+          display: flex;
+          width: 136px;
+          height: var(--input_Height, 56px);
+          padding: 16px 14px 15px 16px;
+          justify-content: center;
+          align-items: flex-end;
+          gap: 35px;
+          border-radius: 6px;
+          border: 1px solid #e0e0e0;
+          background: #fff;
+        }
+        .monthBox {
+          width: 188px;
+          display: flex;
+          height: var(--input_Height, 56px);
+          padding: 16px 14px 15px 16px;
+          justify-content: center;
+          align-items: flex-end;
+          gap: 114px;
+          flex: 1 0 0;
+          border-radius: 6px;
+          border: 1px solid #e0e0e0;
+          background: #fff;
+        }
+        .dayBox {
+          width: 188px;
+          display: flex;
+          height: var(--input_Height, 56px);
+          padding: 16px 14px 15px 16px;
+          justify-content: center;
+          align-items: flex-end;
+          gap: 114px;
+          flex: 1 0 0;
+          border-radius: 6px;
+          border: 1px solid #e0e0e0;
+          background: #fff;
         }
       }
     }
