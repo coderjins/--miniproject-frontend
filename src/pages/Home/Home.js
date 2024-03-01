@@ -22,9 +22,9 @@ const Home = () => {
         rightChildren={
           <div className="bottomArea right">
             {/* ex) 사진첩 클릭 했을 때 homeRight와 사진첩Right로 component변경 */}
-            <HomeRight />
+            {/* <HomeRight />
             <PictureRight />
-            <DiaryRight />
+            <DiaryRight /> */}
             <VisitorsRight />
           </div>
         }

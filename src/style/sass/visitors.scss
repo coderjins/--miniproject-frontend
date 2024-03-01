@@ -1,0 +1,205 @@
+@use './common' as *;
+
+.visitors {
+  display: flex;
+  flex-direction: column;
+
+  .readArea {
+    display: grid;
+    grid-template-columns: 0.8fr 2fr;
+    column-gap: 30px;
+    padding: 20px;
+    border: 1px solid #000;
+
+    ~ .readArea {
+      margin-top: 20px;
+    }
+
+    .imgArea {
+      width: 100%;
+      height: auto;
+      padding: 10px;
+      background-color: #d9d9d9;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .readBox {
+      padding: 10px;
+      background-color: #d9d9d9;
+
+      .textArea {
+        height: calc(100% - 60px);
+        padding: 10px;
+        background-color: #fff;
+      }
+
+      .btnArea {
+        display: flex;
+        justify-content: flex-end;
+        padding-top: 10px;
+
+        .btn {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 30px;
+          padding: 0 10px;
+          border: 1px solid #000;
+          border-radius: 10px;
+          background-color: #fff;
+        }
+      }
+    }
+  }
+
+  .writeArea {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #000;
+
+    .topBox {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      background-color: #d9d9d9;
+
+      .leftBox {
+        display: flex;
+
+        .title {
+          display: block;
+        }
+
+        .time {
+          display: block;
+          margin-left: 10px;
+        }
+      }
+
+      .rightBox {
+        .list {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          li {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            &::after {
+              content: '';
+              display: block;
+              width: 1px;
+              height: 14px;
+              margin: 0 6px;
+              background-color: #000;
+            }
+
+            &:last-child {
+              &::after {
+                display: none;
+              }
+            }
+
+            .btn {
+              display: block;
+            }
+          }
+        }
+      }
+    }
+
+    .contentsBox {
+      display: grid;
+      grid-template-columns: 0.8fr 2fr;
+      column-gap: 30px;
+      margin-top: 10px;
+
+      .imgArea {
+        width: 100%;
+        height: auto;
+        padding: 10px;
+        background-color: #d9d9d9;
+
+        img {
+          width: 100%;
+        }
+      }
+
+      .readBox {
+        padding: 10px;
+        background-color: #d9d9d9;
+
+        .textArea {
+          display: flex;
+          flex-direction: column;
+
+          .secret {
+            display: block;
+            color: #f2972b;
+          }
+
+          .text {
+            display: block;
+            padding-top: 10px;
+          }
+        }
+      }
+    }
+
+    .bottomBox {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 10px;
+      padding: 10px;
+      background-color: #d9d9d9;
+
+      .inputArea {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: calc(100% - 60px);
+
+        .formLabel {
+          display: block;
+
+          &.blind {
+            @include blind;
+          }
+        }
+
+        .formControl {
+          width: 100%;
+          height: 30px;
+          padding: 10px;
+          border: 0 none;
+          background-color: #fff;
+          outline: none;
+          box-sizing: border-box;
+        }
+      }
+
+      .btnArea {
+        margin-left: 10px;
+        .btn {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 30px;
+          padding: 0 10px;
+          border: 1px solid #000;
+          border-radius: 10px;
+          background-color: #fff;
+        }
+      }
+    }
+  }
+}
