@@ -1,0 +1,134 @@
+@use './common' as *;
+
+.diary {
+  padding: 20px;
+  background-color: #ccc;
+  height: calc(100% - 40px);
+
+  .diaryArea {
+    height: calc(100% - 40px);
+    background-color: #d9d9d9;
+
+    .diaryGroup {
+      height: calc(100% - 90px);
+
+      .titleArea {
+        display: flex;
+        flex-direction: column;
+
+        .time {
+          display: block;
+          padding: 10px;
+          background-color: rgba(29, 182, 217, 0.27);
+        }
+
+        .title {
+          display: block;
+          padding: 10px;
+          background-color: #ccc;
+        }
+      }
+
+      .contents {
+        overflow-y: auto;
+        height: 100%;
+        padding: 10px;
+      }
+    }
+
+    .writeGrouo {
+      border-top: 1px dotted #000;
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+
+      > .btn {
+        display: flex;
+        justify-content: flex-end;
+        font-size: 12px;
+      }
+
+      .writeBox {
+        display: flex;
+        padding-top: 10px;
+
+        .inputBox {
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          width: calc(100% - 60px);
+
+          .formLabel {
+            display: block;
+
+            &.blind {
+              @include blind;
+            }
+          }
+
+          .formControl {
+            width: 100%;
+            height: 30px;
+            padding: 10px;
+            border: 0 none;
+            background-color: #fff;
+            outline: none;
+            box-sizing: border-box;
+          }
+        }
+
+        .btnBox {
+          margin-left: 10px;
+          .btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 30px;
+            padding: 0 10px;
+            border: 1px solid #000;
+            border-radius: 10px;
+            background-color: #fff;
+          }
+        }
+      }
+    }
+  }
+
+  .btnArea {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+
+    .box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 30px;
+      padding: 0 20px;
+      background-color: #f7f7f7;
+    }
+
+    .btnGroup {
+      display: flex;
+      align-items: center;
+
+      .btn {
+        display: flex;
+        font-size: 12px;
+
+        &:last-child {
+          &::before {
+            content: '';
+            display: flex;
+            width: 1px;
+            height: 12px;
+            margin: 0 6px;
+            background-color: #000;
+          }
+        }
+      }
+    }
+  }
+}
