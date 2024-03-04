@@ -1,29 +1,26 @@
 import React from 'react';
 
-const Tab = () => {
+const Tab = ({ onSelectMenu, selectedMenu }) => {
+  const menus = ['홈', '사진첩', '다이어리', '방명록'];
+
+  const handleMenuClick = menu => {
+    onSelectMenu(menu);
+  };
+
   return (
     <div className="tab">
       <ul className="tabArea">
-        <li>
-          <button type="button" className="btn active">
-            홈
-          </button>
-        </li>
-        <li>
-          <button type="button" className="btn">
-            사진첩
-          </button>
-        </li>
-        <li>
-          <button type="button" className="btn">
-            다이어리
-          </button>
-        </li>
-        <li>
-          <button type="button" className="btn">
-            방명록
-          </button>
-        </li>
+        {menus.map(menu => (
+          <li key={menu}>
+            <button
+              type="button"
+              className={`btn${selectedMenu === menu ? ' active' : ''}`}
+              onClick={() => handleMenuClick(menu)}
+            >
+              {menu}
+            </button>
+          </li>
+        ))}
       </ul>
     </div>
   );

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import HomeLayout from '../../components/HomeLayout';
 import Tab from '../../components/Tab';
 import HomeLeft from './HomeLeft';
@@ -9,27 +9,49 @@ import DiaryRight from '../Diary/DiaryRight';
 import VisitorsRight from '../Visitors/VisitorsRight';
 
 const Home = () => {
+  const [selectedMenu, setSelectedMenu] = useState('홈');
+
+  const HOME_MENUS = [
+    { menu: '홈', componentLeft: <HomeLeft />, componentRight: <HomeRight /> },
+    {
+      menu: '사진첩',
+      componentLeft: <PictureLeft />,
+      componentRight: <PictureRight />,
+    },
+    {
+      menu: '다이어리',
+      componentLeft: <HomeLeft />,
+      componentRight: <DiaryRight />,
+    },
+    {
+      menu: '방명록',
+      componentLeft: <HomeLeft />,
+      componentRight: <VisitorsRight />,
+    },
+  ];
+
+  const handleMenuSelect = menu => {
+    setSelectedMenu(menu);
+  };
+
   return (
     <>
       <HomeLayout
         leftChildren={
           <div className="bottomArea left">
-            {/* ex) 사진첩 클릭 했을 때 homeLeft와 사진첩Left로 component변경 */}
-            <HomeLeft />
-            <PictureLeft />
+            {HOME_MENUS.find(({ menu }) => menu === selectedMenu).componentLeft}
           </div>
         }
         rightChildren={
           <div className="bottomArea right">
-            {/* ex) 사진첩 클릭 했을 때 homeRight와 사진첩Right로 component변경 */}
-            {/* <HomeRight /> */}
-            {/* <PictureRight /> */}
-            <DiaryRight />
-            {/* <VisitorsRight /> */}
+            {
+              HOME_MENUS.find(({ menu }) => menu === selectedMenu)
+                .componentRight
+            }
           </div>
         }
       />
-      <Tab />
+      <Tab onSelectMenu={handleMenuSelect} selectedMenu={selectedMenu} />
     </>
   );
 };
