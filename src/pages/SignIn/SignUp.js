@@ -83,8 +83,6 @@ const Join = () => {
       const phoneNumberValue = selectedPhoneNumber + phoneNumber;
       const birthday = selectedYear + selectedMonth + selectedDay;
 
-      console.log(phoneNumberValue);
-      console.log(birthday);
       const data = {
         email,
         password,
@@ -127,117 +125,116 @@ const Join = () => {
           <div className="BackText">뒤로</div>
         </button>
       </div>
-      <div className="container">
+      <div className="containers">
         <div className="titleText">회원가입</div>
-        <div className="basicInfoFrame">
-          <div className="label">
-            <p className="userinfoText">기본 정보</p>
+
+        <div className="label">
+          <p className="userinfoText">기본 정보</p>
+          <p className="infoOptionalText">필수 사항</p>
+        </div>
+        <div className="userInputFrame">
+          <input
+            className="userInput"
+            type="text"
+            placeholder="이메일"
+            onChange={inputEmail}
+          />
+
+          <input
+            className="userInput"
+            type="password"
+            placeholder="비밀번호"
+            onChange={inputPassword}
+          />
+
+          <input
+            className="userInput"
+            type="password"
+            placeholder="비밀번호확인"
+            onChange={inputConfirmPassword}
+          />
+        </div>
+        <div />
+        <div className="nicknameInfoFrame">
+          <div className="nicknameLabel">
+            <p className="nicknameInfoText">닉네임</p>
             <p className="infoOptionalText">필수 사항</p>
           </div>
-          <div className="userInputFrame">
+          <div className="nicknameInputFrame">
             <input
-              className="userInput"
+              className="nicknameInput"
               type="text"
-              placeholder="이메일"
-              onChange={inputEmail}
+              placeholder="닉네임 (한글+숫자조합 12자 이하)"
+              onChange={inputNickname}
             />
+          </div>
+        </div>
 
+        <div className="phoneNumberInfoFrame">
+          <div className="phoneNumberLabel">
+            <p className="phoneNumberinfoText">전화번호</p>
+            <p className="infoOptionalText">필수 사항</p>
+          </div>
+          <div className="numberSelectBox">
+            <select
+              className="numberBox"
+              onChange={handlePhoneNumberChange}
+              value={selectedPhoneNumber}
+            >
+              {PHONENUMBER_LIST.map((number, index) => (
+                <option key={index}>{number}</option>
+              ))}
+            </select>
             <input
-              className="userInput"
-              type="password"
-              placeholder="비밀번호"
-              onChange={inputPassword}
-            />
-
-            <input
-              className="userInput"
-              type="password"
-              placeholder="비밀번호확인"
-              onChange={inputConfirmPassword}
+              className="numberInput"
+              type="text"
+              placeholder="휴대폰 번호를 입력해주세요(- 제외)"
+              onChange={inputPhoneNumber}
             />
           </div>
-          <div />
-          <div className="nicknameInfoFrame">
-            <div className="nicknameLabel">
-              <p className="nicknameInfoText">닉네임</p>
-              <p className="infoOptionalText">필수 사항</p>
-            </div>
-            <div className="nicknameInputFrame">
-              <input
-                className="nicknameInput"
-                type="text"
-                placeholder="닉네임 (한글+숫자조합 12자 이하)"
-                onChange={inputNickname}
-              />
-            </div>
+        </div>
+        <div className="birthdayFrame">
+          <div className="birthdayLabel">
+            <p className="birthdayInfoText">생일</p>
+            <p className="infoOptionalText1">선택 사항</p>
           </div>
-
-          <div className="phoneNumberInfoFrame">
-            <div className="phoneNumberLabel">
-              <p className="phoneNumberinfoText">전화번호</p>
-              <p className="infoOptionalText">필수 사항</p>
-            </div>
-            <div className="numberSelectBox">
-              <select
-                className="numberBox"
-                onChange={handlePhoneNumberChange}
-                value={selectedPhoneNumber}
-              >
-                {PHONENUMBER_LIST.map((number, index) => (
-                  <option key={index}>{number}</option>
-                ))}
-              </select>
-              <input
-                className="numberInput"
-                type="text"
-                placeholder="휴대폰 번호를 입력해주세요(- 제외)"
-                onChange={inputPhoneNumber}
-              />
-            </div>
-          </div>
-          <div className="birthdayFrame">
-            <div className="birthdayLabel">
-              <p className="birthdayInfoText">생일</p>
-              <p className="infoOptionalText1">선택 사항</p>
-            </div>
-            <div className="birthdaySelectFrame">
-              <select
-                className="yearBox"
-                onChange={handleYearChange}
-                value={selectedYear}
-              >
-                <option value="-">-</option>
-                {BIRTHDAY_YEAR_LIST.map((year, index) => (
-                  <option key={index} value={year}>
-                    {year}
-                  </option>
-                ))}
-              </select>
-              <select
-                className="monthBox"
-                onChange={handleMonthChange}
-                value={selectedMonth}
-              >
-                <option value="-">-</option>
-                {BIRTHDAY_MONTH_LIST.map((month, index) => (
-                  <option key={index} value={month}>
-                    {month}
-                  </option>
-                ))}
-              </select>
-              <select
-                className="dayBox"
-                onChange={handleDayChange}
-                value={selectedDay}
-              >
-                <option value="-">-</option>
-                {BIRTHDAY_DAY_LIST.map((day, index) => (
-                  <option key={index} value={day}>
-                    {day}
-                  </option>
-                ))}
-              </select>
-            </div>
+          <div className="birthdaySelectFrame">
+            <select
+              className="yearBox"
+              onChange={handleYearChange}
+              value={selectedYear}
+            >
+              <option value="-">-</option>
+              {BIRTHDAY_YEAR_LIST.map((year, index) => (
+                <option key={index} value={year}>
+                  {year}
+                </option>
+              ))}
+            </select>
+            <select
+              className="monthBox"
+              onChange={handleMonthChange}
+              value={selectedMonth}
+            >
+              <option value="-">-</option>
+              {BIRTHDAY_MONTH_LIST.map((month, index) => (
+                <option key={index} value={month}>
+                  {month}
+                </option>
+              ))}
+            </select>
+            <select
+              className="dayBox"
+              onChange={handleDayChange}
+              value={selectedDay}
+            >
+              <option value="-">-</option>
+              {BIRTHDAY_DAY_LIST.map((day, index) => (
+                <option key={index} value={day}>
+                  {day}
+                </option>
+              ))}
+            </select>
           </div>
         </div>
       </div>

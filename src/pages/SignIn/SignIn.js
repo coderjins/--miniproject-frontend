@@ -13,7 +13,7 @@ const Login = () => {
         email,
         password,
       };
-      const response = await fetch('http://192.168.35.252:8000/users/signIn', {
+      const response = await fetch('http://172.30.1.98:8000/users/signIn', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -27,7 +27,7 @@ const Login = () => {
         console.log('로그인 실패');
       }
     } catch (error) {
-      console.error('회원가입 중 오류 발생', error);
+      console.error('로그인 중 오류 발생', error);
     }
   };
   const loginClick = () => {

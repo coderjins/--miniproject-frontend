@@ -1,7 +1,7 @@
 .joinInfoRequire {
   margin: auto;
-  height: 876px;
-  width: 576px;
+  height: 100%;
+  width: 100%;
   gap: 24px;
   display: flex;
   flex-direction: column;
@@ -28,12 +28,12 @@
       }
     }
   }
-  .container {
+  .containers {
     height: 652px;
     display: flex;
     padding: 0px 24px;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     gap: 24px;
     flex: 1 0 0;
     align-self: stretch;

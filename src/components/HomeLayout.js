@@ -1,6 +1,6 @@
 import React from 'react';
 
-const homeLayout = ({ leftChildren, rightChildren }) => {
+const HomeLayout = ({ leftChildren, rightChildren }) => {
   return (
     <div className="page home">
       <div className="layoutArea">
@@ -39,4 +39,4 @@ const homeLayout = ({ leftChildren, rightChildren }) => {
   );
 };
 
-export default homeLayout;
+export default HomeLayout;

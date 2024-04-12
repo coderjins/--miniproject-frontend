@@ -1,0 +1,61 @@
+@use './common' as *;
+
+.photoFolderArea {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 95%;
+  width: 100%;
+  background-color: #e7e7e7;
+  .photoFolderGroup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    border-top: 1px dashed #000000;
+    border-bottom: 1px dashed #000000;
+    padding: 20px 0;
+    margin: 50px 15px;
+    overflow-y: auto;
+    max-height: 500px;
+    .photoFolder {
+      display: flex;
+      align-items: center;
+      padding: 10px;
+      width: 269px;
+      background-color: #d9d9d9;
+      color: #0000ff;
+
+      .folderImage {
+        margin-right: 25px;
+      }
+      .folderOptions {
+        display: flex;
+        gap: 10px;
+        margin-left: auto;
+        color: #000000;
+      }
+    }
+  }
+  .folderManagementArea {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0;
+
+    .manageFolderName {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 0;
+
+      .gearImage {
+        margin-right: 5px;
+      }
+    }
+    .confirmButton {
+      margin-left: 10px;
+      margin-right: 50px;
+    }
+  }
+}
