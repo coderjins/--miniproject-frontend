@@ -1,12 +1,29 @@
 @use './common' as *;
 
 .find {
+  position: relative;
   .findArea {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100%;
+    .back {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      display: flex;
+      width: 79px;
+      height: 40px;
+      justify-content: center;
+      align-items: center;
+      gap: 4px;
+      .backArrow {
+        width: 20px;
+        height: 20px;
+        padding-bottom: 3px;
+      }
+    }
 
     .findTitle {
       display: flex;

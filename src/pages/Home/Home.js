@@ -10,13 +10,33 @@ import VisitorsRight from '../Visitors/VisitorsRight';
 
 const Home = () => {
   const [selectedMenu, setSelectedMenu] = useState('홈');
+  const [selectedFolderId, setSelectedFolderId] = useState('');
+  const [folderNames, setFolderNames] = useState([]);
+
+  const handleSelectFolder = folderId => {
+    setSelectedFolderId(folderId);
+  };
+
+  const updateFolders = updatedFolders => {
+    setFolderNames(updatedFolders);
+  };
 
   const HOME_MENUS = [
     { menu: '홈', componentLeft: <HomeLeft />, componentRight: <HomeRight /> },
     {
       menu: '사진첩',
-      componentLeft: <PictureLeft />,
-      componentRight: <PictureRight />,
+      componentLeft: (
+        <PictureLeft
+          onSelectFolder={handleSelectFolder}
+          onUpdateFolders={updateFolders}
+        />
+      ),
+      componentRight: (
+        <PictureRight
+          selectedFolderIdProp={selectedFolderId}
+          folderNames={folderNames}
+        />
+      ),
     },
     {
       menu: '다이어리',
