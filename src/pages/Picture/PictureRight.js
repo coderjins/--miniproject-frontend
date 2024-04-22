@@ -3,7 +3,6 @@ import '../../style/sass/pictureRight.scss';
 import axios from 'axios';
 
 const PictureRight = ({ selectedFolderIdProp, folderNames }) => {
-  console.log(selectedFolderIdProp);
   const [updatePhoto, setUpdatePhoto] = useState(false);
   const [photoName, setPhotoName] = useState('');
   const [photoURL, setPhotoURL] = useState(null);
