@@ -5,6 +5,11 @@ import gear from '../../style/images/icon/gear-1119298_1280 1.png';
 import AddPictureFolderModal from '../Modal/addPictureFolder';
 import UpdatePictureFolderModal from '../Modal/updatePictureFolder';
 import DeletePictureFolderModal from '../Modal/deletePictureFolder';
+import {
+  FOLDERS_MAKE_API,
+  FOLDERS_READ_API,
+  FOLDERS_DELETE_API,
+} from '../../config/apiConfig';
 
 const PictureLeft = ({ onSelectFolder, onUpdateFolders }) => {
   const [folderOption, setFolderOption] = useState(false);
@@ -18,7 +23,7 @@ const PictureLeft = ({ onSelectFolder, onUpdateFolders }) => {
   let token = localStorage.getItem('accessToken');
   // 새로운 폴더 추가 함수
   const handleAddFolder = newFolderName => {
-    fetch('http://172.30.1.98:8000/folders/make', {
+    fetch(FOLDERS_MAKE_API, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -29,7 +34,7 @@ const PictureLeft = ({ onSelectFolder, onUpdateFolders }) => {
       .then(response => response.json())
       .then(data => {
         // 새로운 폴더가 추가된 후에 폴더 목록을 다시 가져옴
-        fetch('http://172.30.1.98:8000/folders/read', {
+        fetch(FOLDERS_READ_API, {
           headers: {
             Authorization: token,
           },
@@ -58,7 +63,7 @@ const PictureLeft = ({ onSelectFolder, onUpdateFolders }) => {
 
   //폴더 삭제 함수
   const handleDeleteFolder = () => {
-    fetch('http://172.30.1.98:8000/folders/delete', {
+    fetch(FOLDERS_DELETE_API, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
@@ -69,7 +74,7 @@ const PictureLeft = ({ onSelectFolder, onUpdateFolders }) => {
       .then(response => response.json())
       .then(data => {
         // 폴더 삭제 후에 폴더 목록을 다시 가져옴
-        fetch('http://172.30.1.98:8000/folders/read', {
+        fetch(FOLDERS_READ_API, {
           headers: {
             Authorization: token,
           },
@@ -92,7 +97,7 @@ const PictureLeft = ({ onSelectFolder, onUpdateFolders }) => {
 
   // 폴더 데이터 불러오기
   useEffect(() => {
-    fetch('http://172.30.1.98:8000/folders/read', {
+    fetch(FOLDERS_READ_API, {
       headers: {
         Authorization: token,
       },

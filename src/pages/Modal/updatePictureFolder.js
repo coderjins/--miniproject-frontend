@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import closeButton from '../../style/images/icon/close_111152.png';
 import '../../style/sass/updatePictureFolder.scss';
+import { FOLDERS_READ_API, FOLDERS_UPDATE_API } from '../../config/apiConfig';
 
 let token = localStorage.getItem('accessToken');
 
@@ -23,7 +24,7 @@ const UpdatePictureFolderModal = ({
 
   const handleUpdate = () => {
     const folderId = selectedFolderId;
-    fetch(`http://172.30.1.98:8000/folders/update?folderId=${folderId}`, {
+    fetch(`${FOLDERS_UPDATE_API}?folderId=${folderId}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -37,7 +38,7 @@ const UpdatePictureFolderModal = ({
       .then(response => response.json())
       .then(data => {
         // 폴더 이름 업데이트 후에 폴더 목록을 다시 가져옴
-        fetch('http://172.30.1.98:8000/folders/read', {
+        fetch(FOLDERS_READ_API, {
           headers: {
             Authorization: token,
           },
