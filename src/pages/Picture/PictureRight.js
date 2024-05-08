@@ -1,6 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react';
 import '../../style/sass/pictureRight.scss';
 import axios from 'axios';
+import {
+  FOLDERS_READ_API,
+  PHOTOS_API,
+  UPLOAD_PHOTO_API,
+  SCRAP_PHOTO_API,
+} from '../../config/apiConfig';
 
 const PictureRight = ({ selectedFolderIdProp, folderNames }) => {
   const [updatePhoto, setUpdatePhoto] = useState(false);
@@ -22,13 +28,13 @@ const PictureRight = ({ selectedFolderIdProp, folderNames }) => {
           return;
         }
         const [foldersResponse, photosResponse] = await Promise.all([
-          axios.get('http://172.30.1.98:8000/folders/read', {
+          axios.get(FOLDERS_READ_API, {
             headers: { Authorization: token },
           }),
           axios.get(
             selectedFolderIdProp
-              ? `http://172.30.1.98:8000/photos?folderId=${selectedFolderIdProp}`
-              : 'http://172.30.1.98:8000/photos',
+              ? `${PHOTOS_API}?folderId=${selectedFolderIdProp}`
+              : PHOTOS_API,
 
             {
               headers: { Authorization: token },
@@ -78,13 +84,13 @@ const PictureRight = ({ selectedFolderIdProp, folderNames }) => {
   const handleScrap = async photoId => {
     try {
       const response = await axios.put(
-        `http://172.30.1.98:8000/photos?photoId=${photoId}`,
+        `${SCRAP_PHOTO_API}?photoId=${photoId}`,
         { headers: { Authorization: token } },
       );
       if (response.status === 200) {
         // 스크랩 요청 후에 스크랩 정보를 다시 가져와서 업데이트
         const updatedPhotosResponse = await axios.get(
-          `http://172.30.1.98:8000/photos?folderId=${selectedFolderIdProp}`,
+          `${SCRAP_PHOTO_API}?folderId=${selectedFolderIdProp}`,
           { headers: { Authorization: token } },
         );
         if (updatedPhotosResponse.status === 200) {
@@ -123,24 +129,19 @@ const PictureRight = ({ selectedFolderIdProp, folderNames }) => {
       formData.append('photoName', photoName);
       formData.append('folderId', selectedFolderId);
 
-      const response = await axios.post(
-        'http://172.30.1.98:8000/photos/upload',
-        formData,
-        {
-          headers: {
-            Authorization: token,
-          },
+      const response = await axios.post(UPLOAD_PHOTO_API, formData, {
+        headers: {
+          Authorization: token,
         },
-      );
+      });
       if (response.status === 201) {
         const newPhoto = response.data;
         setPhotosFromDB([...photosFromDB, newPhoto]);
         alert('사진이 성공적으로 등록되었습니다.');
         setUpdatePhoto(false);
 
-        // Fetch updated photos after successful upload
         const updatedPhotosResponse = await axios.get(
-          `http://172.30.1.98:8000/photos?folderId=${selectedFolderId}`,
+          `${PHOTOS_API}?folderId=${selectedFolderId}`,
           { headers: { Authorization: token } },
         );
         if (updatedPhotosResponse.status === 200) {
